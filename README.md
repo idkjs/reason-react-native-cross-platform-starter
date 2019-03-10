@@ -1,6 +1,6 @@
 # React-Native-Web-Boilerplate
 
-This is a simple boilerplate for integrating React Native for Web in an existing React Native project. It includes minimal configs & dependencies enough to get you started with React Native for Web.
+Starter for React-Native-Web, Reason, bs-react-native, ios, android and web app and React Hooks.
 
 ## Quick Start
 
@@ -22,4 +22,4 @@ Web:
 - [React Native for Web](https://github.com/necolas/react-native-web)
 - [Webpack](https://webpack.js.org/)
 
-Pull request to improve this boilerplate are always welcomed :tada:
+## Inspired by [@PranitHarekar](https://twitter.com/PranitHarekar)'s https://github.com/Pranit-Harekar/react-native-web-boilerplate
