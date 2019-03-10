@@ -18,8 +18,10 @@ Web:
 
 ## Reference Links
 
+- [ReasonML](http://reasonml.github.io/)
+- [BsReactNative](https://github.com/reasonml-community/bs-react-native)
 - [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
 - [React Native for Web](https://github.com/necolas/react-native-web)
 - [Webpack](https://webpack.js.org/)
 
-## Inspired by [@PranitHarekar](https://twitter.com/PranitHarekar)'s https://github.com/Pranit-Harekar/react-native-web-boilerplate
+Inspired by [@PranitHarekar](https://twitter.com/PranitHarekar)'s <https://github.com/Pranit-Harekar/react-native-web-boilerplate>
