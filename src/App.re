@@ -1,60 +1,68 @@
-open BsReactNative;
+open ReactNative;
 
-module Styles = {
   let styles =
-    StyleSheet.create(
-      Style.{
-        "container":
-          style([
-            flex(1.),
-            justifyContent(Center),
-            alignItems(Center),
-            backgroundColor(String("#F5FCFF")),
-          ]),
-        "welcome":
-          style([
-            fontSize(Float(20.)),
-            textAlign(Center),
-            margin(Pt(10.)),
-          ]),
-        "instructions":
-          style([
-            textAlign(Center),
-            color(String("#333333")),
-            marginBottom(Pt(5.)),
-          ]),
-      },
-    );
-};
+  Style.(
+    StyleSheet.create({
+      "container":
+        style(
+          ~flex=1.,
+          ~justifyContent=`center,
+          ~alignItems=`center,
+          ~backgroundColor="#F5FCFF",
+          (),
+        ),
+      "welcome":
+        style(~fontSize=20., ~textAlign=`center, ~margin=10.->dp, ()),
+      "instructions":
+        style(~textAlign=`center, ~color="#333333", ~marginBottom=5.->dp, ()),
+    })
+  );
+
 module LocalCounter = {
   type state = int;
-  type action =
-    | Incr
-    | Decr;
-  let component = ReasonReact.reducerComponent("LocalCounter");
-  let make = _children => {
-    ...component,
-    initialState: () => 0,
-    reducer: (action, state) =>
-      switch (action) {
-      | Incr => Update(state + 1)
-      | Decr => Update(state - 1)
-      },
-    render: ({state, send}) =>
+  type action = Incr | Decr;
+  let initialState = 0;
+  let reducer = (state, action) =>
+    switch (action) {
+    | Incr => state + 1
+    | Decr => state - 1
+  };
+  [@react.component]
+  let make = () => {
+    let (value, dispatch) = React.useReducer(reducer, initialState);
       <View>
-        <Button title="+" onPress={_ => send(Incr)} />
-        <Button title="-" onPress={_ => send(Decr)} />
+        <Button title="+" onPress={_ => dispatch(Incr)} />
+        <Button title="-" onPress={_ => dispatch(Decr)} />
         <Text>
-          {ReasonReact.string(" counter:" ++ string_of_int(state))}
+          {ReasonReact.string(" counter:" ++ string_of_int(value))}
         </Text>
-      </View>,
+      </View>;
   };
 };
+[@react.component]
 let app = () =>
-  <View style=Styles.styles##container>
-    <Text
-      style=Styles.styles##welcome
-      value="Let's get this party started!!!"
-    />
+  <View style=styles##container>
+    <Text style=styles##welcome>
+      "Welcome to (Reason) React Native!"->React.string
+    </Text>
+    <Text style=styles##instructions>
+      "To get started, edit src/App.re"->React.string
+    </Text>
+    <Text style=styles##instructions>
+      {switch (Platform.os) {
+       /*
+        Instructions depends on the platform this code will run on
+        More at https://reasonml-community.github.io/reason-react-native/en/docs/apis/Platform/
+        */
+       | os when os == Platform.ios =>
+         "Press Cmd+R to reload,\n" ++ "Cmd+D or shake for dev menu"
+       | os when os == Platform.android =>
+         "Double tap R on your keyboard to reload,\n"
+         ++ "Shake or press menu button for dev menu"
+       | os when os == Platform.web => "Press Cmd+R to reload."
+       | _ => ""
+       }}
+      ->React.string
+    </Text>
     <LocalCounter />
   </View>;

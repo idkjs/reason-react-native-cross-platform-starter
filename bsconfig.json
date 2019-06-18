@@ -1,7 +1,7 @@
 {
   "name": "rnw-re-starter",
   "reason": {
-    "react-jsx": 2
+    "react-jsx": 3
   },
   "package-specs": {
     "module": "commonjs",
@@ -12,7 +12,7 @@
   ],
   "ppx-flags": [],
   "bs-dependencies": [
-    "bs-react-native",
+    "reason-react-native",
     "reason-react"
   ],
   "sources": [

@@ -1,11 +1,6 @@
 # ninja log v5
-1	51	1552240343	src/Utils.mlast	5bcd8f3caf9ceb16
-1	28	1552240360	src/Utils.mlast.d	a2e8f79f5bf6838f
-0	56	1552240406	src/App.mlast	ed00ff5b131bb101
-57	74	1552240406	src/App.mlast.d	ba5cb246aaa25fff
-1	64	1552240406	src/App.cmj	19936a90b4dfa5c1
-1	64	1552240406	/Users/prisc_000/working/AMP/re-web-native-app/lib/js/src/App.bs.js	19936a90b4dfa5c1
-1	64	1552240406	src/App.cmi	19936a90b4dfa5c1
-1	138	1552240406	src/App.cmj	47669ea1656fb79a
-1	138	1552240406	/Users/prisc_000/working/AMP/re-web-native-app/src/App.bs.js	47669ea1656fb79a
-1	138	1552240406	src/App.cmi	47669ea1656fb79a
+0	29	1560846624	src/App.mlast	2e2196ac42ec44bb
+29	36	1560846624	src/App.mlast.d	8f360fee7d8daea8
+0	31	1560846624	src/App.cmj	d726460889af1321
+0	31	1560846624	/Users/prisc_000/Downloads/reason-react-native-cross-platform-starter/src/App.bs.js	d726460889af1321
+0	31	1560846624	src/App.cmi	d726460889af1321
